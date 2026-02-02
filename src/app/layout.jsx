@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
@@ -6,6 +7,10 @@ import Navbar from "@/components/Navbar/Navbar";
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+});
+
+export const fontBangla = localFont({
+  src: "./../fonts/mayaboti-normal.ttf",
 });
 
 export const metadata = {

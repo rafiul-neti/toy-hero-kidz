@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { FaStar, FaShoppingCart } from "react-icons/fa";
+import Link from "next/link";
+import { FaStar } from "react-icons/fa";
+import AddToCart from "../Buttons/AddToCart";
 
 const ProductCard = ({ product }) => {
-  const { title, image, price, discount, ratings, reviews, sold } = product;
+  const { _id, title, image, price, discount, ratings, reviews, sold } =
+    product;
 
   const discountedPrice = Math.round(price - (price * discount) / 100);
 
@@ -40,10 +43,16 @@ const ProductCard = ({ product }) => {
 
         {/* Button */}
         <div className="card-actions mt-2">
-          <button className="btn btn-primary btn-sm w-full gap-2">
-            <FaShoppingCart />
-            Add to Cart
-          </button>
+          <AddToCart
+            className={`btn-sm w-full gap-2 hover:bg-white hover:text-primary duration-300`}
+          />
+
+          <Link
+            href={`/products/${_id}`}
+            className="btn btn-primary btn-outline btn-sm w-full duration-200"
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </div>

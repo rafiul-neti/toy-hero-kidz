@@ -1,6 +1,26 @@
 import Banner from "@/components/Home/Banner/Banner";
 import Products from "@/components/Home/Products/Products";
 
+export const metadata = {
+  title: "Toy Kidz | Educational & Fun Toys for Kids",
+  description:
+    "Explore a wide range of educational and fun toys for kids. Learning boards, creative toys, and safe play tools — only at Toy Kidz.",
+
+  openGraph: {
+    title: "Toy Kidz | Educational & Fun Toys for Kids",
+    description:
+      "Educational toys that make learning fun. Safe, non-toxic toys for children of all ages.",
+    images: [
+      {
+        url: "https://i.ibb.co.com/0RjhKhST/image.png",
+        width: 1200,
+        height: 630,
+        alt: "Toy Kidz Homepage",
+      },
+    ],
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen space-y-20">

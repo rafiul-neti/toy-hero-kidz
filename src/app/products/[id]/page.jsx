@@ -1,8 +1,39 @@
 import { getSingleProducts } from "@/actions/server/product";
 import React from "react";
 import Image from "next/image";
-import { FaStar, FaShoppingCart, FaCheck } from "react-icons/fa";
+import { FaStar, FaCheck } from "react-icons/fa";
 import AddToCart from "@/components/Buttons/AddToCart";
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const product = await getSingleProducts(id);
+
+  return {
+    title: product.title,
+    description: product.description.slice(0, 160),
+
+    openGraph: {
+      title: product.title,
+      description: product.description.slice(0, 160),
+      url: `https://toy-kidz.vercel.app/products/${id}`,
+      images: [
+        {
+          url: product.image || "https://i.ibb.co.com/Kxxc0BJ5/image.png",
+          width: 1200,
+          height: 630,
+          alt: product.title,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: product.title,
+      description: product.description.slice(0, 160),
+      images: [product.image || "https://i.ibb.co.com/Kxxc0BJ5/image.png"],
+    },
+  };
+}
 
 const ProducDetails = async ({ params }) => {
   const { id } = await params;

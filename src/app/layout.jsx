@@ -17,14 +17,14 @@ export const metadata = {
   metadataBase: new URL("https://toy-kidz.vercel.app"),
 
   title: {
-    default: "Toy Kidz | Educational & Fun Toys for Kids",
-    template: "%s | Toy Kidz",
+    default: "Hero Kidz | Educational & Fun Toys for Kids",
+    template: "%s | Hero Kidz",
   },
 
   description:
     "Toy Kidz is an online toy store offering educational, safe, and fun toys for kids. Discover learning boards, creative toys, and play-based learning tools for your children.",
 
-  applicationName: "Toy Kidz",
+  applicationName: "Hero Kidz",
 
   keywords: [
     "kids toys",
@@ -37,9 +37,9 @@ export const metadata = {
     "preschool toys",
   ],
 
-  authors: [{ name: "Toy Kidz Team" }],
-  creator: "Toy Kidz",
-  publisher: "Toy Kidz",
+  authors: [{ name: "Hero Kidz Team" }],
+  creator: "Hero Kidz",
+  publisher: "Hero Kidz",
 
   robots: {
     index: true,
@@ -55,9 +55,9 @@ export const metadata = {
 
   openGraph: {
     type: "website",
-    siteName: "Toy Kidz",
+    siteName: "Hero Kidz",
     url: "https://toy-kidz.vercel.app",
-    title: "Toy Kidz | Educational & Fun Toys for Kids",
+    title: "Hero Kidz | Educational & Fun Toys for Kids",
     description:
       "Buy educational and fun toys for kids. Safe, non-toxic, and designed for learning through play.",
     images: [
@@ -65,7 +65,7 @@ export const metadata = {
         url: "https://i.ibb.co.com/0RjhKhST/image.png",
         width: 1200,
         height: 630,
-        alt: "Toy Kidz Homepage Preview",
+        alt: "Hero Kidz Homepage Preview",
       },
     ],
     locale: "en_US",
@@ -73,7 +73,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Toy Kidz | Educational & Fun Toys for Kids",
+    title: "Hero Kidz | Educational & Fun Toys for Kids",
     description:
       "Educational, safe, and fun toys for kids. Learn through play with Toy Kidz.",
     images: ["https://i.ibb.co.com/0RjhKhST/image.png"],

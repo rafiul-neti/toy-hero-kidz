@@ -1,5 +1,5 @@
 import LoginForm from "@/components/Auth/LoginForm";
-import Image from "next/image";
+import SocialLogin from "@/components/Buttons/SocialLogin";
 import Link from "next/link";
 
 const LoginPage = () => {
@@ -23,20 +23,7 @@ const LoginPage = () => {
         </div>
 
         {/* Google login */}
-        <button
-          className="w-full border flex items-center justify-center gap-3 
-          py-2 rounded-lg hover:bg-gray-100 transition"
-        >
-          <Image
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="google"
-            width={20}
-            height={20}
-          />
-          <span className="text-sm font-medium text-gray-700">
-            Continue with Google
-          </span>
-        </button>
+        <SocialLogin />
 
         {/* Register toggle */}
         <p className="text-center text-sm text-gray-600 mt-6">

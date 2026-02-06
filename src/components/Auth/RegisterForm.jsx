@@ -1,5 +1,6 @@
 "use client";
 import { postUser } from "@/actions/server/user";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -7,12 +8,13 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [err, setErr] = useState("");
+  const router = useRouter()
 
   const inputClassNames = `w-full px-1 md:px-2 lg:px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300`;
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setErr("")
+    setErr("");
 
     const name = e.target.name.value;
     const email = e.target.email.value;
@@ -29,12 +31,11 @@ const RegisterForm = () => {
       password,
     };
 
-    console.log(userInfo);
-
     const result = await postUser(userInfo);
 
     if (result.insertedId) {
       toast.success("Registration Successful. Please Login.");
+      router.push("/login")
     } else {
       toast.error(result.message);
     }

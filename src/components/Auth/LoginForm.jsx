@@ -3,16 +3,26 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useSearchParams } from "next/navigation";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const params = useSearchParams();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    signIn("credentials", { redirect: false, email, password });
+    const result = await signIn("credentials", {
+      email,
+      password,
+      callbackUrl: params.get("callbackUrl"),
+    });
+    if (!result.ok) {
+      toast.error("Please Enter Valid Credentials!");
+    }
   };
 
   return (
@@ -65,10 +75,7 @@ const LoginForm = () => {
       </div>
 
       {/* Login button */}
-      <button
-        type="submit"
-        className={`btn btn-primary text-white btn-block`}
-      >
+      <button type="submit" className={`btn btn-primary text-white btn-block`}>
         Login
       </button>
     </form>

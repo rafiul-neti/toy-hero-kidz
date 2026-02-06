@@ -1,7 +1,6 @@
 import Link from "next/link";
-
-import Image from "next/image";
 import RegisterForm from "@/components/Auth/RegisterForm";
+import SocialLogin from "@/components/Buttons/SocialLogin";
 
 export default function RegisterPage() {
   return (
@@ -23,15 +22,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Google login */}
-        <button className="w-full border flex items-center justify-center gap-3 py-2 rounded-lg hover:bg-gray-100 transition">
-          <Image
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="google"
-            width={20}
-            height={20}
-          />
-          Continue with Google
-        </button>
+        <SocialLogin />
 
         {/* Login link */}
         <p className="text-center text-sm text-gray-600 mt-6">

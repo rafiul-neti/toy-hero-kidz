@@ -31,7 +31,7 @@ export const postUser = async (payload) => {
 
   // create user
   const newUser = {
-    userId: generateUserId(),
+    userId: await generateUserId(),
     provider: "credentials",
     name,
     email,
@@ -60,17 +60,17 @@ export const loginUser = async (payload) => {
     !typeof email === "string" ||
     !email.includes("@")
   ) {
-    return { message: "please enter valid credentials." };
+    return null;
   }
 
   // checking the user is exist or not
   const user = await usersColl.findOne({ email });
   if (!user) {
-    return { message: "No user found with this email." };
+    return null;
   }
 
   // checking password
   const isMatched = await bcrypt.compare(password, user.password);
   if (isMatched) return user;
-  else return { message: "Invalid Credentials." };
+  else return null;
 };

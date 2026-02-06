@@ -4,7 +4,7 @@ const { productsColl } = require("@/lib/dbConnect");
 
 export const getProducts = async () => {
   const products = await productsColl.find().toArray();
-  return products;
+  return products || [];
 };
 
 export const getSingleProducts = async (id) => {
@@ -12,5 +12,5 @@ export const getSingleProducts = async (id) => {
 
   const query = { _id: new ObjectId(id) };
   const product = await productsColl.findOne(query);
-  return product;
+  return { ...product, _id: product._id.toString() } || {};
 };

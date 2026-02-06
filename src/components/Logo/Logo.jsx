@@ -10,6 +10,7 @@ const Logo = () => {
           src={`/assets/logo.png`}
           width={50}
           height={40}
+          className='hidden sm:block'
         ></Image>
         <h2 className='text-2xl font-bold'>
           Hero<span className='text-primary'>Kidz</span>

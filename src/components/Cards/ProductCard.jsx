@@ -43,10 +43,6 @@ const ProductCard = ({ product }) => {
 
         {/* Button */}
         <div className="card-actions mt-2">
-          <AddToCart
-            className={`btn-sm w-full gap-2 hover:bg-white hover:text-primary duration-300`}
-          />
-
           <Link
             href={`/products/${_id}`}
             className="btn btn-primary btn-outline btn-sm w-full duration-200"

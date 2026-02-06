@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import CartButton from "./CartButton";
+import AuthButtons from "./AuthButtons";
 
 const Navbar = () => {
   const links = (
@@ -43,7 +44,7 @@ const Navbar = () => {
             </svg>
           </div>
           <ul
-            tabIndex="-1"
+            tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {links}
@@ -57,9 +58,7 @@ const Navbar = () => {
       <div className="navbar-end items-center gap-5">
         <CartButton />
 
-        <Link href={"/login"} className="btn btn-primary btn-outline">
-          Login
-        </Link>
+        <AuthButtons />
       </div>
     </nav>
   );

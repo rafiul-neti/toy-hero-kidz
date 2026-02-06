@@ -11,5 +11,14 @@ const client = new MongoClient(uri, {
   },
 });
 
+async function run() {
+  try {
+    await client.connect();
+  } finally {
+  }
+}
+
+run().catch(console.error);
+
 export const usersColl = client.db(db).collection("users");
 export const productsColl = client.db(db).collection("products");

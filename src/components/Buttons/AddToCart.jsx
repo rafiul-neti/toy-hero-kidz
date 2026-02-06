@@ -1,10 +1,10 @@
-"use client";
+"use client"
 import { generateUserId } from "@/actions/server/user";
 import { FaShoppingCart } from "react-icons/fa";
 
-const AddToCart = ({ className }) => {
+const AddToCart = ({ className, product }) => {
   const handleCart = () => {
-    console.log(generateUserId());
+    alert(product._id)
   };
   return (
     <button onClick={handleCart} className={`btn btn-primary ${className}`}>

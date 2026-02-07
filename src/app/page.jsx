@@ -24,10 +24,10 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const session = await getServerSession(authOptions)
+  // const session = await getServerSession(authOptions)
   return (
     <div className="min-h-screen space-y-20">
-      <p>{JSON.stringify(session)}</p>
+      {/* <p>{JSON.stringify(session)}</p> */}
       <section>
         <Banner />
       </section>

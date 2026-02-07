@@ -40,6 +40,7 @@ const ProducDetails = async ({ params }) => {
   const product = await getSingleProducts(id);
 
   const {
+    _id,
     title,
     bangla,
     image,
@@ -94,7 +95,7 @@ const ProducDetails = async ({ params }) => {
 
         {/* Actions */}
         <div className="flex gap-3 pt-2">
-          <AddToCart product={product} className={`gap-2`} />
+          <AddToCart productId={_id.toString()} className={`gap-2`} />
           <button className="btn btn-outline">Buy Now</button>
         </div>
 

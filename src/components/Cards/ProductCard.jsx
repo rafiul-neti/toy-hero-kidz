@@ -43,6 +43,7 @@ const ProductCard = ({ product }) => {
 
         {/* Button */}
         <div className="card-actions mt-2">
+          <AddToCart className={`btn-block`} productId={_id.toString()} />
           <Link
             href={`/products/${_id}`}
             className="btn btn-primary btn-outline btn-sm w-full duration-200"

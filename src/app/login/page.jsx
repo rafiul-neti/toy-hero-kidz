@@ -25,16 +25,6 @@ const LoginPage = () => {
         {/* Google login */}
         <SocialLogin />
 
-        {/* Register toggle */}
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Don’t have an account?{" "}
-          <Link
-            href="/register"
-            className="text-blue-600 font-semibold hover:underline"
-          >
-            Register
-          </Link>
-        </p>
       </div>
     </div>
   );

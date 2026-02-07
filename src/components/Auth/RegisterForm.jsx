@@ -1,6 +1,7 @@
 "use client";
 import { postUser } from "@/actions/server/user";
-import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -8,7 +9,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [err, setErr] = useState("");
-  const router = useRouter()
+  const params = useSearchParams();
+  const router = useRouter();
 
   const inputClassNames = `w-full px-1 md:px-2 lg:px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300`;
 
@@ -35,7 +37,15 @@ const RegisterForm = () => {
 
     if (result.insertedId) {
       toast.success("Registration Successful. Please Login.");
-      router.push("/login")
+      const autoLoginUser = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      if (autoLoginUser.ok) {
+        router.push(params.get("callbackUrl") || "/login");
+      } else {
+      }
     } else {
       toast.error(result.message);
     }

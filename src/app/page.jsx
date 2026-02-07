@@ -1,5 +1,7 @@
 import Banner from "@/components/Home/Banner/Banner";
 import Products from "@/components/Home/Products/Products";
+import { authOptions } from "@/lib/authOptions";
+import { getServerSession } from "next-auth";
 
 export const metadata = {
   title: "Hero Kidz | Educational & Fun Toys for Kids",
@@ -21,9 +23,11 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions)
   return (
     <div className="min-h-screen space-y-20">
+      <p>{JSON.stringify(session)}</p>
       <section>
         <Banner />
       </section>

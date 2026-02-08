@@ -20,6 +20,12 @@ async function run() {
 
 run().catch(console.error);
 
-export const usersColl = client.db(db).collection("users");
-export const productsColl = client.db(db).collection("products");
-export const cartsColl = client.db(db).collection("carts")
+const collections = (collectionName) => {
+  const collection = client.db(db).collection(collectionName);
+  return collection;
+};
+
+export const usersColl = collections("users");
+export const productsColl = collections("products");
+export const cartsColl = collections("carts");
+export const ordersColl = collections("orders");

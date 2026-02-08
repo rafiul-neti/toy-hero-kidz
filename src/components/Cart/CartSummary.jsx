@@ -1,5 +1,6 @@
 
 import { fontBangla } from "@/lib/fonts";
+import Link from "next/link";
 import React from "react";
 import { TbTruckDelivery, TbReceipt2, TbCheckupList } from "react-icons/tb";
 
@@ -54,10 +55,10 @@ const CartSummary = ({ subTotal }) => {
         </div>
 
         <div className="card-actions pt-4">
-          <button className="btn btn-primary btn-block btn-lg shadow-md group">
+          <Link href={`/checkout`} className="btn btn-primary btn-block btn-lg shadow-md group">
             <TbCheckupList className="text-xl group-hover:scale-110 transition-transform" />
             চেকআউট করুন
-          </button>
+          </Link>
         </div>
 
         <p className="text-xs text-center text-base-content/50 mt-2">

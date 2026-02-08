@@ -1,17 +1,19 @@
 "use client";
-import { getCartItemsFromDB } from "@/actions/server/cart";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 
 const CartButton = () => {
   const session = useSession();
   const router = useRouter();
-  // const [isLoading, setIsLoading] = useState(false);
   const islogin = session?.status === "authenticated";
-  // console.log(path);
 
   const handleGoToCart = () => {
+    // 1. Force the dropdown to close by blurring the active element
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+    // 2. Navigation Logic
     if (islogin) {
       router.push("/cart");
     } else {

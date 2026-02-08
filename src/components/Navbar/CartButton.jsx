@@ -1,4 +1,5 @@
 "use client";
+import { getCartItemsFromDB } from "@/actions/server/cart";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -43,7 +44,7 @@ const CartButton = () => {
               />{" "}
             </svg>
             <span className="badge badge-sm bg-red-600 text-white indicator-item left-1">
-              8
+              {3}
             </span>
           </div>
         </div>
@@ -52,7 +53,7 @@ const CartButton = () => {
           className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
         >
           <div className="card-body">
-            <span className="text-lg font-bold">8 Items</span>
+            <span className="text-lg font-bold">{3} Items</span>
             <span className="text-info">Subtotal: $999</span>
             <div className="card-actions">
               <button

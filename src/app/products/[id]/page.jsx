@@ -35,9 +35,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const ProducDetails = async ({ params }) => {
+const ProductDetails = async ({ params }) => {
   const { id } = await params;
-  const product = await getSingleProducts(id);
+  const product = (await getSingleProducts(id)) || {};
 
   const {
     _id,
@@ -133,4 +133,4 @@ const ProducDetails = async ({ params }) => {
   );
 };
 
-export default ProducDetails;
+export default ProductDetails;

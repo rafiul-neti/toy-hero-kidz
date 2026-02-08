@@ -1,5 +1,5 @@
 const uri = process.env.MONGODB_URI;
-const db = process.env.DB_NAME;
+const dbName = process.env.DB_NAME;
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -21,7 +21,7 @@ async function run() {
 run().catch(console.error);
 
 const collections = (collectionName) => {
-  const collection = client.db(db).collection(collectionName);
+  const collection = client.db(dbName).collection(collectionName);
   return collection;
 };
 

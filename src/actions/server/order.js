@@ -2,6 +2,8 @@
 
 import { authOptions } from "@/lib/authOptions";
 import { cartsColl, ordersColl } from "@/lib/dbConnect";
+import { orderInvoiceTemplate } from "@/lib/emailInvoice";
+import { sendEmail } from "@/lib/sendEmail";
 import { getServerSession } from "next-auth";
 
 export const confirmOrder = async (formData, cartId) => {
@@ -63,6 +65,17 @@ export const confirmOrder = async (formData, cartId) => {
       await ordersColl.deleteOne({ _id: createdOrderId });
       throw new Error("DELETE_FAILED");
     }
+
+    // 📧 Send Invoice Email
+    await sendEmail({
+      to: session?.user.email,
+      subject: "Your Order Invoice - Hero Kidz",
+      html: orderInvoiceTemplate({
+        orderId: orderResult.insertedId.toString(),
+        items: cartItems,
+        grandTotal,
+      }),
+    });
 
     return {
       success: true,

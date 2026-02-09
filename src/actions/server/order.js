@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/authOptions";
 import { cartsColl, ordersColl } from "@/lib/dbConnect";
 import { orderInvoiceTemplate } from "@/lib/emailInvoice";
 import { sendEmail } from "@/lib/sendEmail";
+import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 
 export const confirmOrder = async (formData, cartId) => {
@@ -77,7 +78,7 @@ export const confirmOrder = async (formData, cartId) => {
       }),
     }).catch((err) =>
       console.error("Email sending failed, but order is safe:", err),
-    );;
+    );
 
     return {
       success: true,
@@ -99,4 +100,9 @@ export const confirmOrder = async (formData, cartId) => {
 
     return { success: false, message: userMessage };
   }
+};
+
+export const findSingleOrder = async (id) => {
+  const result = await ordersColl.findOne({ _id: new ObjectId(id) });
+  return result;
 };

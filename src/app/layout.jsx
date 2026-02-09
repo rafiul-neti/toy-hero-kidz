@@ -91,14 +91,20 @@ export default function RootLayout({ children }) {
     <NextAuthProvider>
       <html lang="en">
         <body className={`${poppins.className} antialiased`}>
-          <header className="py-2 md:w-11/12 mx-auto">
-            <Navbar></Navbar>
+          {/* Wrap header in a sticky container with a background */}
+          <header className="sticky top-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-200">
+            <div className="py-2 md:w-11/12 mx-auto">
+              <Navbar />
+            </div>
           </header>
 
-          <main className="px-5 md:w-11/12 mx-auto">{children}</main>
+          {/* Added a bit of top margin/padding to prevent overlap if needed */}
+          <main className="px-5 md:w-11/12 mx-auto min-h-screen">
+            {children}
+          </main>
 
           <footer>
-            <Footer></Footer>
+            <Footer />
           </footer>
 
           <ToasterProvider />

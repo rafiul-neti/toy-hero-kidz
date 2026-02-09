@@ -1,57 +1,82 @@
-# Hero Kidzz - Project Assets
-<img src="./public/assets/hero.png">
-## Overview
-
-Hero Kidzz is a small, single-vendor e-commerce web application designed for selling children's products. This repository contains all project assets including images, icons, and media files.
-
-## Features
-
-- 🛍️ **Product Catalog** - Browse children's toys and accessories
-- 🛒 **Shopping Cart** - Add and manage items
-- 💳 **Easy Checkout** - Safe payment processing
-- 📦 **Order Invoice** - Monitor shipments
-- 👤 **User Accounts** - Save preferences and history
-- 🎨 **Responsive Design** - Mobile-friendly interface
-- ⭐ **Product Reviews** - Customer feedback system
-
-## Starter packages
 ```
-npm install react-icons mongodb bcryptjs
-```
+# 🧸 Hero Kidz – A Toy E-Commerce Concept
 
-## Colors
+**Live:** (https://toy-kidz.vercel.app/)
 
-```
- /* Brand */
-  --color-primary: oklch(65% 0.23 35);
-  --color-secondary: oklch(58% 0.18 30);
-  --color-accent: oklch(72% 0.20 55);
+A clean, functional e-commerce storefront designed for a premium shopping experience. This project was built as a learning journey to implement modern web standards, focusing on reliable authentication and a consistent user interface.
 
-  /* Base */
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(97% 0.01 95);
-  --color-base-300: oklch(92% 0.015 95);
+---
 
-  /* Neutral */
-  --color-neutral: oklch(35% 0.01 260);
-  --color-neutral-content: oklch(96% 0 0);
+## 🛠️ The Practical Side
 
-  /* Feedback */
-  --color-success: oklch(70% 0.17 145);
-  --color-error: oklch(62% 0.24 28);
+This application addresses common e-commerce challenges with a straightforward technical approach:
+
+* **Authentication Flow:** Managed via NextAuth.js. It includes a custom middleware logic that ensures users are directed to the right place (like the Cart or Dashboard) after logging in.
+* **Role Management:** Basic implementation of user roles to distinguish between standard customers and administrative access.
+* **Responsive UI:** Developed using Tailwind CSS and DaisyUI, ensuring the store is accessible on mobile, tablet, and desktop devices.
+* **Database Integration:** Uses MongoDB for flexible product and user data management.
+
+---
+
+## 💻 Tech Stack
+
+* **Framework:** Next.js 15 (App Router)
+* **Styling:** Tailwind CSS & DaisyUI
+* **Security:** NextAuth.js (JWT Strategy)
+* **Database:** MongoDB
+* **Icons:** React Icons & Tabler Icons
+
+---
+
+## 📂 Project Organization
+
+```text
+├── actions/             # Server-side logic for data handling
+├── app/                 # Next.js App Router & Page layouts
+├── components/          # Reusable UI elements (Buttons, Navbar, Footer)
+└── proxy.js             # Route protection and redirect logic
+
 ```
 
-## Getting Started
+---
 
-1. Clone the repository
-2. Extract assets to your project directory
-3. Reference images in your application
+## ⚙️ Getting Started
 
-## Contributing
+To run this project locally, follow these steps:
 
-Follow project guidelines when adding new assets.
+1. **Clone the repo:**
+```bash
+git clone [https://github.com/rafiul-neti/toy-hero-kidz.git](https://github.com/rafiul-neti/toy-hero-kidz.git)
 
-## License
+```
 
-All assets are proprietary to Hero Kidzz.
-# Hero-Kidz-assets
+
+2. **Install dependencies:**
+```bash
+npm install
+
+```
+
+
+3. **Environment Setup:**
+Create a `.env.local` file with your MongoDB URI and NextAuth Secret.
+4. **Launch:**
+```bash
+npm run dev
+
+```
+
+
+
+---
+
+## ✉️ Let's Connect
+
+I built **Hero Kidz** to refine my skills in full-stack development. I am always open to feedback on my code or discussing new opportunities.
+
+* **GitHub:** [rafiul-neti](https://www.google.com/search?q=https://github.com/rafiul-neti)
+* **LinkedIn:** [irafiul210](https://www.google.com/search?q=https://linkedin.com/in/irafiul210)
+
+---
+
+> *"Optimized UX • Clean Architecture"*

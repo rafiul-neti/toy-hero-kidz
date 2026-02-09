@@ -67,7 +67,7 @@ export const confirmOrder = async (formData, cartId) => {
     }
 
     // 📧 Send Invoice Email
-    await sendEmail({
+    sendEmail({
       to: session?.user.email,
       subject: "Your Order Invoice - Hero Kidz",
       html: orderInvoiceTemplate({
@@ -75,7 +75,9 @@ export const confirmOrder = async (formData, cartId) => {
         items: cartItems,
         grandTotal,
       }),
-    });
+    }).catch((err) =>
+      console.error("Email sending failed, but order is safe:", err),
+    );;
 
     return {
       success: true,

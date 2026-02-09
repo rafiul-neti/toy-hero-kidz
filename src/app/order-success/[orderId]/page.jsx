@@ -7,9 +7,15 @@ import {
 } from "react-icons/tb";
 import { fontBangla } from "@/lib/fonts";
 import ReceiptPrintBtn from "@/components/Buttons/ReceiptPrintBtn";
+import OrderSuccessSkeleton from "@/components/SkeletonLoaders/OrderSuccessSkeleton";
 
 const OrderSuccessPage = async ({ params }) => {
   const { orderId } = await params;
+
+  // Show skeleton while loading
+  if (!orderId) {
+    return <OrderSuccessSkeleton />;
+  }
 
   return (
     <div
@@ -55,7 +61,9 @@ const OrderSuccessPage = async ({ params }) => {
             <div className="bg-base-200/50 rounded-2xl p-5 mb-8 flex gap-4 items-start">
               <TbTruckDelivery className="text-3xl text-primary shrink-0" />
               <div>
-                <h4 className="font-extrabold text-[24px] mb-1 tracking-widest">পরবর্তী ধাপ</h4>
+                <h4 className="font-extrabold text-[24px] mb-1 tracking-widest">
+                  পরবর্তী ধাপ
+                </h4>
                 <p className="text-lg opacity-90 leading-relaxed tracking-wide">
                   আমাদের একজন প্রতিনিধি আপনার মোবাইল নম্বরে ফোন করে অর্ডারটি
                   কনফার্ম করবেন। কনফার্ম হওয়ার ৪৮-৭২ ঘণ্টার মধ্যে আপনি ডেলিভারি
@@ -86,6 +94,6 @@ const OrderSuccessPage = async ({ params }) => {
       </div>
     </div>
   );
-};
+};;
 
 export default OrderSuccessPage;

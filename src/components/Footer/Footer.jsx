@@ -6,9 +6,8 @@ import { TbCircleCheck, TbTrophy } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    // Changed to a light gray background to create a clear section break from the main white body
     <footer className="bg-slate-50 border-t-4 border-primary/10 text-base-content mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
@@ -57,25 +56,23 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/categories"
+                <p
                   className="hover:text-primary transition-colors"
                 >
                   Browse Categories
-                </Link>
+                </p>
               </li>
               <li>
-                <Link
-                  href="/dashboard"
+                <p
                   className="hover:text-primary transition-colors"
                 >
                   My Account
-                </Link>
+                </p>
               </li>
             </ul>
           </div>
 
-          {/* RECRUITER ROOM - Highlighted Card */}
+          {/* DevS Insight - Highlighted Card */}
           <div className="md:col-span-5 bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 relative overflow-hidden group">
             {/* Decorative element to emphasize "New Section" feel */}
             <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -85,7 +82,7 @@ const Footer = () => {
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-md tracking-tighter uppercase">
-                  Recruiter Room
+                  {`Developer's Insight`}
                 </span>
               </div>
 
@@ -95,7 +92,8 @@ const Footer = () => {
               <p className="text-sm text-gray-500 mb-8 leading-relaxed">
                 This project showcases my ability to build complex features like{" "}
                 <strong>Proxy-based Auth</strong> and{" "}
-                <strong>Responsive UI</strong> {`using Next.js 16. Let's connect!`}
+                <strong>Responsive UI</strong>{" "}
+                {`using Next.js 16. Let's connect!`}
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -114,7 +112,7 @@ const Footer = () => {
                   <FaLinkedinIn className="text-lg" /> LinkedIn
                 </a>
                 <a
-                  href="mailto:your-email@example.com"
+                  href="mailto:irafiul210@gmail.com"
                   className="btn btn-sm h-11 btn-outline border-gray-200 px-4 normal-case hover:bg-primary hover:border-primary hover:text-white transition-all"
                 >
                   <FaEnvelope /> Email

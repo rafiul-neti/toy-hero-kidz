@@ -1,6 +1,7 @@
 import Link from "next/link";
 import RegisterForm from "@/components/Auth/RegisterForm";
 import SocialLogin from "@/components/Buttons/SocialLogin";
+import { Suspense } from "react";
 
 export default function RegisterPage() {
   return (
@@ -12,7 +13,13 @@ export default function RegisterPage() {
         </h1>
 
         {/* Form */}
-        <RegisterForm />
+        <Suspense
+          fallback={
+            <span className="loading loading-md loading-spinner"></span>
+          }
+        >
+          <RegisterForm />
+        </Suspense>
 
         {/* Divider */}
         <div className="flex items-center my-6">

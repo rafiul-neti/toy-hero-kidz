@@ -1,5 +1,6 @@
 import LoginForm from "@/components/Auth/LoginForm";
 import SocialLogin from "@/components/Buttons/SocialLogin";
+import { Suspense } from "react";
 
 const LoginPage = () => {
   return (
@@ -12,7 +13,9 @@ const LoginPage = () => {
         </h1>
 
         {/* Form */}
-        <LoginForm />
+        <Suspense fallback={<span className="loading loading-spinner loading-md"></span>}>
+          <LoginForm />
+        </Suspense>
 
         {/* Divider */}
         <div className="flex items-center my-6">
@@ -23,7 +26,6 @@ const LoginPage = () => {
 
         {/* Google login */}
         <SocialLogin />
-
       </div>
     </div>
   );

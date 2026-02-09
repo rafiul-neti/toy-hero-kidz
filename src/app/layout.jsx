@@ -103,7 +103,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
 
-          <footer>
+          <footer className="mt-14">
             <Footer />
           </footer>
 
